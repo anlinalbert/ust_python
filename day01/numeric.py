@@ -1,5 +1,0 @@
-print(f"Addition: {3 + 4}")
-print(f"Subtraction: {5 - 5}")
-print(f"Multiplication: {4 * 7}")
-print(f"Division: {8 / 2}")
-print(f"Modulus: {4 % 1}")
