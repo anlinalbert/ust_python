@@ -4,4 +4,10 @@ def find_middle_char(s):
     return s[middle_index]
 
 
+def reverse_string(s):
+    """Function to reverse a string."""
+    return s[::-1]
+
+
 print(find_middle_char("Superman"))
+print(reverse_string("Batman"))
