@@ -3,5 +3,5 @@ def odd_even(number):
     return "even" if number % 2 == 0 else "odd"
 
 
-print(f"Number 5 is {odd_even(5)}.")
-print(f"Number 10 is {odd_even(10)}.")
+user_input = int(input("Enter a number: "))
+print(f"Number {user_input} is {odd_even(user_input)}.")
