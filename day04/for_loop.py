@@ -1,6 +1,6 @@
 def print_username(input_username, no_of_times):
     """Function to print username multiple times."""
-    for _ in range(0, no_of_times):
+    for _ in range(no_of_times):
         print(input_username)
 
 
