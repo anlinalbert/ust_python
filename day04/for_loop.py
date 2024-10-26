@@ -1,8 +1,11 @@
-def print_username(username, times):
+def print_username(input_username, no_of_times):
     """Function to print username multiple times."""
-    print(f"\nPrinting username for {times} times:")
-    for _ in range(0, times):
-        print(username)
+    for _ in range(0, no_of_times):
+        print(input_username)
 
 
-print_username(input("Enter username: "), int(input("Enter no.of times: ")))
+username = input("Enter username: ")
+times = int(input("Enter no.of times: "))
+print(f"\nPrinting username for {times} times:")
+
+print_username(username, times)
