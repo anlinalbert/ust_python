@@ -3,11 +3,9 @@ def get_schools():
     schools = {}
     with open("sample.csv", "r") as file:
         for line in file:
-            extracted_school = line.split(",")[1]
-            if extracted_school in schools:
-                schools[extracted_school] += 1
-            else:
-                schools[extracted_school] = 1
+            if line.strip():
+                extracted_school = line.strip().split(",")[1]
+                schools[extracted_school] = schools.get(extracted_school, 0) + 1
     return schools
 
 
