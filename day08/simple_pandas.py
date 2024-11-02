@@ -13,14 +13,14 @@ def add_data():
     data["Age"].append(age)
 
 
-def return_dataframe():
+def print_dataframe():
     """Function to return a dataframe."""
-    return pd.DataFrame(data)
+    print(f"Dataframe: {pd.DataFrame(data)}")
 
 
 menu = {
     "1": add_data,
-    "2": return_dataframe
+    "2": print_dataframe
 }
 
 while True:
@@ -28,15 +28,11 @@ while True:
     user_choice = input("Select an option: ")
     function_name = menu.get(user_choice)
 
-    if user_choice == "1":
-        try:
-            function_name()
-        except Exception as _:
-            print("Error occurred.")
-    elif user_choice == "2":
-        print(f"Dataframe:\n{function_name()}\n")
-    elif user_choice == "3":
+    if user_choice == "3":
         print("Program exit.")
         break
-    else:
-        print("Invalid choice. Retry")
+
+    try:
+        function_name()
+    except Exception as _:
+        print("Invalid Input.\n")
