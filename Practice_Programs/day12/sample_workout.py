@@ -12,9 +12,9 @@ df = pd.DataFrame(data)
 print(df.groupby("Store")["Sales"].sum())
 region_data = df.groupby("Region")["Sales"].sum().reset_index()
 
-
+# Merging
 df = pd.merge(df, region_data, on="Region", how="left", suffixes=("_Store", "_Region"))
 print(df)
 
-df["SalesByRegion"] = df[df.groupby("Store")["Sales"].sum()] / df["Sales_Region"] * 100
-print(df)
+# df["SalesByRegion"] = df[df.groupby("Store")["Sales"].sum()] / df["Sales_Region"] * 100
+# print(df)
