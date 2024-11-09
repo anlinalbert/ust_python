@@ -10,4 +10,8 @@ df = pd.DataFrame(data)
 
 # Print sum by grouping
 print(df.groupby("Store")["Sales"].sum())
-print(df.groupby("Region")["Sales"].sum())
+region_data = df.groupby("Region")["Sales"].sum().reset_index()
+print(region_data)
+
+
+df.merge(df, region_data, on="Region", how="left")
