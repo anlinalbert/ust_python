@@ -10,3 +10,12 @@ gender_survival = titanic.groupby("Sex")["Survived"].agg(["mean"]).reset_index()
 gender_survival["mean"] = gender_survival["mean"] * 100
 print(gender_survival)
 
+# Add column to df
+titanic["FamilySize"] = titanic["SibSp"] + titanic["Parch"]
+print(titanic)
+
+# Calculate family survival rate and merge to df
+family_survival = titanic.groupby("FamilySize")["Survived"].mean().reset_index()
+family_survival.columns = ["FamilySize", "FamilySurvivalRate"]
+titanic = titanic.merge(family_survival, on="FamilySize", how="left")
+print(titanic)
