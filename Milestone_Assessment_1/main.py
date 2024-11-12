@@ -18,7 +18,7 @@ def word_count(data):
 
 
 try:
-    with open("noval.txt", "r", encoding="utf8") as file:
+    with open("novel.csv", "r", encoding="utf8") as file:
         file_data = file.read()
 except FileNotFoundError:
     print("'noval.txt' file not found.")
