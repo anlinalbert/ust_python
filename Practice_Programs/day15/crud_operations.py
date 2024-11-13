@@ -10,13 +10,13 @@ try:
         cursor = connection.cursor()
 
         # Create
-        # cursor.execute(
-        #     """
-        #     INSERT INTO Customer(CustomerId, FirstName, LastName, Company, Email, Country)
-        #     VALUES(?, ?, ?, ?, ?, ?)
-        #     """, new_customer
-        # )
-        # print("New customer added.")
+        cursor.execute(
+            """
+            INSERT INTO Customer(CustomerId, FirstName, LastName, Company, Email, Country)
+            VALUES(?, ?, ?, ?, ?, ?)
+            """, new_customer
+        )
+        print("New customer added.")
 
         # Update
         new_email = "ken.adams@tcs"
@@ -30,14 +30,25 @@ try:
             WHERE CustomerId = ?
             """, (new_email, new_company, customer_id)
         )
+        print("Data updated.")
+
+        # Delete
+        cursor.execute(
+            """
+            DELETE FROM Customer
+            WHERE CustomerId = 123
+            """
+        )
+        print("Data deleted.")
 
         # Read
-        customer = cursor.execute(
+        cursor.execute(
             """
             SELECT * FROM Customer
             WHERE CustomerId = 123
             """
         )
+        customer = cursor.fetchall()
         for row in customer:
             print(row)
 
