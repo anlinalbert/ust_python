@@ -18,6 +18,19 @@ try:
         # )
         # print("New customer added.")
 
+        # Update
+        new_email = "ken.adams@tcs"
+        new_company = "tcs"
+        customer_id = 123
+
+        cursor.execute(
+            """
+            UPDATE Customer
+            SET Email = ?, Company = ?
+            WHERE CustomerId = ?
+            """, (new_email, new_company, customer_id)
+        )
+
         # Read
         customer = cursor.execute(
             """
