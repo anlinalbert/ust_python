@@ -27,5 +27,14 @@ with sqlite3.connect(db_path) as connection:
         """
     new_total = pd.read_sql_query(query, connection)
 
-    new_total = new_total.groupby("BillingCountry")["Total"].sum()
-print(new_total)
+    new_total = new_total.groupby("BillingCountry")["Total"].sum().reset_index()
+
+    # Writing to sql
+    new_total.to_sql("GroupByCountry", connection, if_exists="replace", index=False)
+
+    query = """
+            SELECT *
+            FROM GroupByCountry
+            """
+    data = pd.read_sql_query(query, connection)
+print(data)
