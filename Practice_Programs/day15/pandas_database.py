@@ -17,4 +17,12 @@ with sqlite3.connect(db_path) as connection:
     """
 
     total = pd.read_sql_query(query, connection)
-print(total)
+
+    query = """
+        SELECT *
+        FROM Invoice
+        """
+    new_total = pd.read_sql_query(query, connection)
+
+    new_total = new_total.groupby("BillingCountry")["Total"].sum()
+print(new_total)
