@@ -1,8 +1,11 @@
+import os
+
 import pandas as pd
 from mongodb import MongoClient
-from config import MONGODB_URI
+from dotenv import load_dotenv
 
-connection_string = MONGODB_URI
+load_dotenv()
+connection_string = os.getenv("MONGODB_URI")
 
 try:
     client = MongoClient(connection_string)
