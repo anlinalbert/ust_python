@@ -8,11 +8,25 @@ try:
     client = MongoClient(connection_string)
     print("Connected to MongoDB.")
 
-    db = client["sample_mflix"]
+    # Reading from db
+    database = client["sample_mflix"]
+    collection = database["movies"]
 
-    collection = db["movies"]
+    print(pd.DataFrame(collection.find().limit(5)))
 
-    results = collection.find().limit(5)
-    print(pd.DataFrame(results))
+    # Write to db
+    database = client["ust_live_quiz"]
+    collection = database["basic_collection_test"]
+
+    data_to_insert = {
+        "username": "anlinalbert",
+        "age": 26,
+        "completed_series": ["Lost", "Friends", "Stranger Things"],
+        "location": "TVM"
+    }
+
+    collection.insert_one(data_to_insert)
+    print("Data inserted.")
+
 except Exception as e:
     print(e)
