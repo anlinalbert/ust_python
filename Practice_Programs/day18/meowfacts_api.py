@@ -4,15 +4,18 @@ URL = "https://meowfacts.herokuapp.com/"
 
 
 def get_one_random_fact():
+    """Get one random cat fact."""
     return requests.get(URL)
 
 
 def get_multiple_facts(number):
+    """Get multiple random cat facts."""
     new_url = URL + f"?count={number}"
     return requests.get(new_url)
 
 
 def get_fact_in_new_language(language):
+    """Get a single random cat fact but in a specified language."""
     new_url = URL + f"?{language}"
     return requests.get(new_url)
 
