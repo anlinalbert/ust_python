@@ -15,6 +15,9 @@
                   <Item>
                     <option name="path" value="Practice_Programs/day19/exchange_rates_2024-11-20.json" />
                   </Item>
+                  <Item>
+                    <option name="path" value="Practice_Programs/day20/sample.json" />
+                  </Item>
                 </list>
               </option>
             </SchemaInfo>
