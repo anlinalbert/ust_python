@@ -1,4 +1,7 @@
 .env*
-*.db*
+*.db
 *.png
 *.json
+*.xlsx
+*.docx
+*.ppt
