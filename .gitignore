@@ -6,3 +6,5 @@
 *.docx
 *.ppt
 *.txt
+/Practice_Programs/selenium/geckodriver.exe
+/Practice_Programs/day22/geckodriver.log
