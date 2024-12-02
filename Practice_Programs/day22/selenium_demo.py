@@ -6,5 +6,6 @@ from webdriver_manager.firefox import GeckoDriverManager
 driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
 
 driver.get("https://www.google.com")
+print(f"Title: {driver.title}")
 time.sleep(5)
 driver.quit()
